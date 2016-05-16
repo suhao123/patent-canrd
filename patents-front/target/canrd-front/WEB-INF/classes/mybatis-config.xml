@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--
+            自动把create_time 转换成 createTime
+            不需要在添加 as 语句，如：
+            select create_time as createTime from your_table_name;//以前使用这样的语句
+            使用 select create_time from your_table_name;//现在使用这样的语句
+        -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!--
+        类的别名
+        以前使用:<typeAlias type="com.qunar.qfound.model.Simple" alias="Simple"/>
+        现在使用：<package name="com.qunar.qfound.model"/>可完成model下面使用实体类的扫描
+        后面方式默认把类的别名命名为类名且第一个字母为小写，也支持直接使用类名,如：
+        在mapper/simple.xml中可以使用simple也可以使用Simple
+    -->
+    <typeAliases>
+        <package name="com.canrd.patents.model"/>
+        <package name="com.canrd.patents.util"/>
+    </typeAliases>
+    <!--<plugins>
+        &lt;!&ndash;分页插件&ndash;&gt;
+        <plugin interceptor="PageHelper">
+            <property name="dialect" value="mysql"/>
+        </plugin>
+    </plugins>-->
+</configuration>

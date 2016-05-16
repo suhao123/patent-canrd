@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="patents-backstore:war">
+    <output-path>$PROJECT_DIR$/patents-backstore/target</output-path>
+    <root id="archive" name="patents-backstore.war">
+      <element id="artifact" artifact-name="patents-backstore:war exploded" />
+    </root>
+  </artifact>
+</component>
